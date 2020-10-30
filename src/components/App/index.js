@@ -1,13 +1,10 @@
 import React from 'react';
 import { Admin, Resource } from 'react-admin';
-import jsonServerProvider from 'ra-data-json-server';
 
-import { API_HOST } from '../../constants';
+import dataProvider from '../../lib/dataProvider';
 import Playlists from '../Playlists';
 import EditPlaylist from '../EditPlaylist';
 import CreatePlaylist from '../CreatePlaylist';
-
-const dataProvider = jsonServerProvider(API_HOST);
 
 const App = () => (
   <Admin dataProvider={dataProvider}>

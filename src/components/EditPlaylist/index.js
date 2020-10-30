@@ -1,4 +1,4 @@
-import { Edit, TabbedForm, TextInput, ArrayInput, SimpleFormIterator, FormTab } from 'react-admin';
+import { Edit, TabbedForm, TextInput, ArrayInput, SimpleFormIterator, FormTab, ImageInput, ImageField } from 'react-admin';
 
 import PlaylistTitle from '../PlaylistTitle';
 
@@ -9,6 +9,12 @@ const EditPlaylist = (props) => (
   >
     <TabbedForm>
       <FormTab label="General">
+        <ImageInput
+          source="cover"
+          accept="image/*"
+        >
+          <ImageField source="src" />
+        </ImageInput>
         <TextInput
           fullWidth
           source="title"
@@ -22,6 +28,13 @@ const EditPlaylist = (props) => (
       <FormTab label="Track list">
         <ArrayInput source="tracks">
           <SimpleFormIterator>
+            <ImageInput
+              label="Cover"
+              source="cover"
+              accept="image/*"
+            >
+              <ImageField source="src" />
+            </ImageInput>
             <TextInput
               label="Title"
               source="title"
