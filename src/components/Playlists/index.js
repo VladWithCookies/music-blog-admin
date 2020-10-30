@@ -1,11 +1,11 @@
-import { List, Datagrid, TextField, DateField } from 'react-admin';
+import { List, Datagrid, TextField, EditButton } from 'react-admin';
 
 const Playlists = (props) => (
   <List {...props}>
     <Datagrid>
-      <TextField source="id" />
       <TextField source="title" />
-      <DateField source="year" />
+      <TextField source="year" />
+      <EditButton />
     </Datagrid>
   </List>
 );
